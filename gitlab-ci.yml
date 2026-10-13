@@ -1,0 +1,41 @@
+stages:
+
+  - build
+
+  - test
+
+  - deploy
+
+build:
+
+  stage: build
+
+  script:
+
+    - mkdir -p build
+
+    - echo "This is a test artifact" > build/artifact.txt
+
+    - ls -la build/
+
+  artifacts:
+
+    paths:
+
+      - build/
+
+test:
+
+  stage: test
+
+  script:
+
+    - echo "Running tests..."
+
+deploy:
+
+  stage: deploy
+
+  script:
+
+    - echo "Deploying the application..."
